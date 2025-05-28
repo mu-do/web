@@ -1,0 +1,518 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    display: flex; /* Usar flexbox para el cuerpo */
+    flex-direction: column; /* Apilar contenido verticalmente */
+    min-height: 100vh; /* Asegura que el footer esté en la parte inferior si el contenido es corto */
+}
+
+/* Header y Navegación */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a { /* ESTAS REGLAS AFECTAN A LOS ENLACES DE NAVEGACIÓN, INCLUYENDO LOS NUEVOS DE USUARIO */
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active { /* ESTAS REGLAS TAMBIÉN AFECTAN A LOS ENLACES DE NAVEGACIÓN */
+    color: #007bff;
+}
+
+/* --- Estilos para la sección de Banners de la página principal --- */
+.hero-banner {
+    display: flex;
+    flex-direction: column; /* Apila el banner principal y el secundario */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #007bff; /* Color de fondo si la imagen no cubre todo */
+    color: #fff;
+}
+
+.main-banner-container {
+    width: 100%;
+    position: relative; /* Para posibles textos superpuestos */
+    margin-bottom: 10px; /* Espacio entre el banner principal y el secundario */
+}
+
+.main-banner-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Elimina espacios extra debajo de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+.secondary-banner-container {
+    width: 100%;
+}
+
+.secondary-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Estilos para las Secciones de Contenido General (Productos, Contacto, etc.) --- */
+main {
+    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
+}
+
+.productos-page-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.productos-page-content h1,
+.featured-products-intro h2, /* Para el título de las ofertas destacadas */
+.category-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-tex {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+/* --- Estilos para la Cuadrícula de Productos --- */
+.producto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 280px es el ancho mínimo de cada columna */
+    gap: 30px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las columnas si no llenan todo el espacio */
+    max-width: 1200px; /* Limita el ancho de la cuadrícula, si no está dentro de productos-page-content */
+    margin: 20px auto; /* Centra la cuadrícula */
+    padding: 0 20px; /* Padding a los lados */
+}
+
+/* Estilos para las Tarjetas de Producto Individuales */
+.producto-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio para que el botón esté abajo */
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.producto-card img {
+    max-width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: contain; /* Asegura que las imágenes se ajusten sin distorsión */
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.producto-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.producto-card .description {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que la descripción crezca y empuje el resto del contenido */
+    min-height: unset;
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+    text-overflow: initial;
+}
+
+.producto-card .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px;
+    margin-top: auto; /* Empuja el precio y el botón hacia la parte inferior de la tarjeta */
+}
+
+/* Botón Añadir al Carrito */
+.btn-add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+}
+
+.btn-add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Iconos de Font Awesome */
+.fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.fab { /* Para iconos de marcas como Facebook, Twitter */
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+/* --- Botón "Ver más ofertas" --- */
+.button-container {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.btn-see-more {
+    display: inline-block;
+    background-color: #4CAF50; /* Un verde similar al del botón en la imagen */
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-see-more:hover {
+    background-color: #45a049;
+}
+
+/* --- Pie de página (Footer) --- */
+.site-footer {
+    background-color: #222;
+    color: #bbb;
+    padding: 40px 20px 20px;
+    font-size: 14px;
+    margin-top: 40px; /* Espacio superior para separar del contenido principal */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las secciones se envuelvan en pantallas pequeñas */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1; /* Permite que las secciones ocupen espacio equitativamente */
+    min-width: 250px; /* Ancho mínimo para cada sección del footer */
+    margin: 10px 20px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a { /* ESTAS REGLAS AFECTAN A LOS ENLACES DEL FOOTER, INCLUYENDO LOS NUEVOS DE USUARIO */
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover { /* ESTAS REGLAS TAMBIÉN AFECTAN A LOS ENLACES DEL FOOTER */
+    color: #007bff;
+}
+
+.footer-section.contact p i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.social-links a {
+    color: #bbb;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 30px;
+    color: #888;
+}
+
+/* --- Estilos para la Página "Mi Perfil" --- */
+.perfil-section {
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+.perfil-section h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.perfil-info,
+.perfil-orders {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.perfil-info h2,
+.perfil-orders h2 {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.perfil-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+/* Estilos para la Imagen de Perfil */
+.profile-picture {
+    display: block; /* Hace que la imagen sea un elemento de bloque para poder centrarla horizontalmente. */
+    margin: 0 auto 20px auto; /* Centra la imagen horizontalmente (0 para margen superior/inferior automático, auto para margen izquierdo/derecho automático) y añade 20px de margen inferior para separarla del texto siguiente. */
+    width: 150px; /* Define un ancho fijo de 150 píxeles para la imagen. */
+    height: 150px; /* Define una altura fija de 150 píxeles para la imagen. (Esto, junto con el ancho, la hace cuadrada). */
+    border-radius: 50%; /* Aplica un radio de borde del 50% para hacer la imagen completamente redonda (si es cuadrada). */
+    object-fit: cover; /* Asegura que la imagen cubra completamente el área del contenedor (el círculo), recortando cualquier parte que no quepa, pero sin distorsionar la proporción. Esto es clave para que las imágenes se vean bien dentro del círculo. */
+    border: 4px solid #007bff; /* Añade un borde sólido de 4 píxeles de grosor y color azul (#007bff) alrededor de la imagen. Esto crea el "marco redondo". */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Agrega una sombra suave alrededor de la imagen para darle un efecto de profundidad. */
+}
+
+.btn-edit-profile,
+.btn-view-all-orders {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit-profile:hover,
+.btn-view-all-orders:hover {
+    background-color: #218838;
+}
+
+.perfil-orders table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.perfil-orders th,
+.perfil-orders td {
+    border: 1px solid #eee;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.perfil-orders th {
+    background-color: #e9ecef;
+    color: #333;
+    font-weight: bold;
+}
+
+.perfil-orders tbody tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+/* Responsividad para la tabla del perfil */
+@media (max-width: 600px) {
+    .perfil-orders table,
+    .perfil-orders thead,
+    .perfil-orders tbody,
+    .perfil-orders th,
+    .perfil-orders td,
+    .perfil-orders tr {
+        display: block;
+    }
+
+    .perfil-orders thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .perfil-orders tr {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+
+    .perfil-orders td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    .perfil-orders td:last-child {
+        border-bottom: 0;
+    }
+
+    .perfil-orders td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: #555;
+    }
+}
+
+/* --- Diseño Responsivo General --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .category-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .productos-page-content,
+    .producto-grid {
+        padding: 10px;
+    }
+
+    .producto-card {
+        padding: 15px;
+    }
+
+    .hero-banner {
+        flex-direction: column;
+    }
+    .main-banner-container, .secondary-banner-container {
+        margin-bottom: 5px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        border-bottom: none;
+        padding-bottom: 5px;
+    }
+}

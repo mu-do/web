@@ -1,0 +1,614 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho/alto total */
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Encabezado y Navegación */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Asegura un padding horizontal */
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #007bff; /* Color azul para enlaces activos o al pasar el ratón */
+}
+
+/* --- Estilos para la sección de Banners de la página principal --- */
+.hero-banner {
+    display: flex;
+    flex-direction: column; /* Apila el banner principal y el secundario */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #d109c0; /* Color de fondo si la imagen no cubre todo */
+    color: #fff; /* Asegura que cualquier texto que se agregue tenga color blanco */
+}
+
+.main-banner-container {
+    width: 100%;
+    position: relative; /* Para posibles textos superpuestos */
+    margin-bottom: 10px; /* Espacio entre el banner principal y el secundario */
+}
+
+.main-banner-image {
+    width: 100%;
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    display: block; /* Elimina espacios extra debajo de la imagen */
+    /* max-height: 300px;  Ajusta si el banner es demasiado alto y quieres limitarlo */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+}
+
+.secondary-banner-container {
+    width: 100%;
+    /* max-width: 1200px;  Puedes limitar su ancho si lo deseas */
+}
+
+.secondary-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Estilos para las Secciones de Contenido General (Productos, Contacto, etc.) --- */
+/* Se aplica a .productos-page-content y .featured-products-intro para un estilo consistente */
+.productos-page-content,
+.featured-products-intro {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.productos-page-content h1,
+.featured-products-intro h2, /* Para el título de las ofertas destacadas */
+.category-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-tex {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+/* Estilos para la navegación de categorías (en productos.html) */
+.category-nav {
+    margin-bottom: 30px; /* Espacio debajo de la navegación de categorías */
+}
+
+.category-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+    justify-content: center; /* Centra los elementos */
+    gap: 15px; /* Espacio entre los elementos de la lista */
+}
+
+.category-nav li a {
+    display: block; /* Para que el padding funcione bien en toda el área del enlace */
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita que el texto de la categoría se rompa */
+}
+
+.category-nav li a:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- Estilos para la Cuadrícula de Productos --- */
+.producto-grid {
+    display: grid;
+    /* Usa un valor mínimo para la columna para mejor adaptabilidad */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las columnas si no llenan todo el espacio */
+    /* Remueve max-width y margin si ya está dentro de .productos-page-content o .featured-products-grid */
+    /* max-width: 1200px; */
+    /* margin: 20px auto; */
+    padding: 0 20px; /* Padding a los lados dentro del contenedor padre */
+}
+
+/* Estilos para las Tarjetas de Producto Individuales */
+.producto-card {
+    background-color: #035570; /* <--- AQUÍ SE CAMBIÓ EL COLOR DE FONDO A CELESTE */
+    border: 1px solid #da1ea2;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio para que el botón esté abajo */
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.producto-card img {
+    max-width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: contain; /* Asegura que las imágenes se ajusten sin distorsión */
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.producto-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    /* Añadido para prevenir que el título sea demasiado largo en una sola línea */
+    word-wrap: break-word; /* Permite que palabras largas se rompan */
+    hyphens: auto; /* Permite guiones automáticos */
+}
+
+.producto-card .description {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que la descripción crezca y empuje el resto del contenido */
+    /* Estas propiedades aseguran que el texto fluya normalmente */
+    /* Puedes usar line-clamp si quieres limitar las líneas de la descripción */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+    /* display: -webkit-box; */
+    /* -webkit-line-clamp: 3; */ /* Limita a 3 líneas */
+    /* -webkit-box-orient: vertical; */
+}
+
+.producto-card .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px;
+    margin-top: auto; /* Empuja el precio y el botón hacia la parte inferior de la tarjeta */
+}
+
+/* Botón Añadir al Carrito */
+.btn-add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+}
+
+.btn-add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Iconos de Font Awesome */
+.fas {
+    /* Estas propiedades no son necesarias aquí, ya que son valores predeterminados de Font Awesome */
+    /* font-family: "Font Awesome 5 Free"; */
+    /* font-weight: 900; */
+}
+
+/* --- Botón "Ver más ofertas" --- */
+.button-container {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.btn-see-more {
+    display: inline-block;
+    background-color: #4CAF50; /* Un verde similar al del botón en la imagen */
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-see-more:hover {
+    background-color: #45a049;
+}
+
+/* --- Pie de Página (Footer) --- */
+.site-footer {
+    background-color: #222; /* Un gris oscuro */
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 14px;
+    margin-top: 40px; /* Espacio superior para separarlo del contenido principal */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las secciones del footer se envuelvan en pantallas pequeñas */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Espacio entre las columnas del footer */
+}
+
+.footer-section {
+    flex: 1; /* Permite que las secciones crezcan y se encojan */
+    min-width: 200px; /* Ancho mínimo para cada sección del footer */
+    margin-bottom: 20px; /* Espacio en la parte inferior para dispositivos pequeños */
+}
+
+.footer-section h3 {
+    color: #007bff; /* Color azul para los títulos de sección del footer */
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section p,
+.footer-section ul {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #ccc; /* Un gris más claro para los enlaces del footer */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.footer-section .fas {
+    margin-right: 8px;
+    color: #007bff; /* Color azul para los iconos del footer */
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff; /* Color azul al pasar el ratón por los iconos sociales */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444; /* Línea separadora */
+    color: #aaa; /* Un gris más claro para el texto de copyright */
+}
+
+/* --- Estilos para la página del Carrito de Compras --- */
+.cart-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table-container {
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+    margin-bottom: 20px;
+}
+
+.cart-section table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio entre las celdas */
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.cart-section th,
+.cart-section td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle; /* Alinea el contenido verticalmente */
+}
+
+.cart-section th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.cart-section tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Color de fondo para filas pares */
+}
+
+.cart-section tfoot td {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.cart-section tfoot .text-right {
+    text-align: right;
+}
+
+.cart-section tfoot .total-final {
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan */
+    gap: 15px; /* Espacio entre los botones */
+}
+
+.btn-continue-shopping {
+    background-color: #6c757d; /* Gris */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Para que padding y margin funcionen bien */
+    text-align: center;
+}
+
+.btn-continue-shopping:hover {
+    background-color: #5a6268;
+}
+
+.btn-checkout {
+    background-color: #007bff; /* Azul */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-checkout:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 10px; /* Ajusta el padding en pantallas más pequeñas */
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+        width: 100%; /* Ocupa el ancho completo */
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    /* Ajustes para la navegación de categorías en móviles */
+    .category-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Reduce el espacio entre categorías */
+    }
+
+    .productos-page-content,
+    .producto-grid {
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .producto-card {
+        padding: 15px; /* Reduce el padding de las tarjetas en pantallas pequeñas */
+    }
+
+    /* Ajustes para banners en móviles */
+    .hero-banner {
+        flex-direction: column; /* Asegura que los banners se apilen verticalmente en móviles */
+    }
+    .main-banner-container, .secondary-banner-container {
+        margin-bottom: 5px;
+    }
+
+    /* Pie de página responsivo */
+    .footer-content {
+        flex-direction: column; /* Apila las secciones del footer verticalmente */
+        text-align: center; /* Centra el texto del footer */
+        gap: 30px; /* Más espacio entre secciones apiladas */
+    }
+
+    .footer-section {
+        min-width: unset; /* Reinicia el ancho mínimo para que se ajuste mejor */
+    }
+
+    .footer-section ul {
+        display: flex; /* Para centrar los enlaces si son pocos */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Responsividad para la tabla del carrito */
+    .cart-section table,
+    .cart-section thead,
+    .cart-section tbody,
+    .cart-section th,
+    .cart-section td,
+    .cart-section tr {
+        display: block; /* Hace que la tabla se comporte como bloques apilados */
+    }
+
+    .cart-section thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; /* Oculta los encabezados de la tabla */
+    }
+
+    .cart-section tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .cart-section td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%; /* Espacio para la etiqueta de la columna */
+        text-align: right;
+    }
+
+    .cart-section td:last-child {
+        border-bottom: 0;
+    }
+
+    .cart-section td:before {
+        content: attr(data-label); /* Muestra el encabezado de la columna como etiqueta */
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: #555;
+    }
+
+    /* Etiquetas específicas para cada columna */
+    .cart-section td:nth-of-type(1):before { content: "Producto:"; }
+    .cart-section td:nth-of-type(2):before { content: "Precio Unitario:"; }
+    .cart-section td:nth-of-type(3):before { content: "Cantidad:"; }
+    .cart-section td:nth-of-type(4):before { content: "Total:"; }
+
+    .cart-item-details {
+        justify-content: flex-end; /* Alinea el contenido del producto a la derecha */
+    }
+    .cart-item-details span {
+        text-align: right;
+    }
+
+    .cart-actions {
+        flex-direction: column; /* Apila los botones de acción */
+        align-items: center;
+    }
+    .btn-continue-shopping, .btn-checkout {
+        width: 100%; /* Botones ocupan todo el ancho */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas (ej. móviles en modo retrato) */
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 20px; /* Reduce el tamaño del logo */
+    }
+
+    .productos-page-content h1,
+    .featured-products-intro h2,
+    .category-section h2 {
+        font-size: 24px; /* Reduce el tamaño de los títulos de sección */
+    }
+
+    .intro-tex {
+        font-size: 16px; /* Reduce el tamaño del texto introductorio */
+    }
+
+    .producto-grid {
+        grid-template-columns: 1fr; /* Una sola columna para los productos */
+        padding: 0 10px; /* Reduce el padding aún más */
+    }
+
+    .btn-see-more {
+        padding: 12px 25px; /* Reduce el padding del botón "Ver más" */
+        font-size: 16px;
+    }
+
+    .footer-section h3 {
+        font-size: 16px; /* Reduce el tamaño de los títulos del footer */
+    }
+}
